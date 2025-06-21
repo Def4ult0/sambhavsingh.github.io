@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sambhav Singh | Cybersecurity Enthusiast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ash-gray: #CAD2C5;
+            --cambridge-blue: #84A98C;
+            --hookers-green: #52796F;
+            --dark-slate-gray: #354F52;
+            --charcoal: #2F3E46;
+            --light-text: #F8F9FA;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        @keyframes colorCycle {
+            0% { color: var(--cambridge-blue); }
+            50% { color: var(--hookers-green); }
+            100% { color: var(--cambridge-blue); }
+        }
+        
+        body {
+            font-family: 'Google Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--ash-gray);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+        
+        header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-slate-gray);
+            animation: colorCycle 6s infinite ease;
+        }
+        
+        .tagline {
+            color: var(--hookers-green);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(47,62,70,0.1);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--hookers-green);
+        }
+        
+        .project {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-left: 4px solid var(--cambridge-blue);
+            transition: all 0.3s ease;
+            background-color: var(--ash-gray);
+            border-radius: 8px;
+        }
+        
+        .project:hover {
+            border-left: 4px solid var(--dark-slate-gray);
+            transform: translateX(8px);
+        }
+        
+        .project h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--charcoal);
+        }
+        
+        a {
+            color: var(--hookers-green);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--cambridge-blue);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        footer {
+            margin-top: 6rem;
+            text-align: center;
+            padding: 2rem;
+            color: var(--light-text);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--dark-slate-gray);
+            transition: all 0.3s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .social-icon:nth-child(1) { animation-delay: 0s; }
+        .social-icon:nth-child(2) { animation-delay: 0.2s; }
+        .social-icon:nth-child(3) { animation-delay: 0.4s; }
+        .social-icon:nth-child(4) { animation-delay: 0.6s; }
+        
+        .social-icon:hover {
+            transform: scale(1.1) translateY(-5px);
+            background-color: var(--hookers-green);
+        }
+        
+        .github { color: white; }
+        .linkedin { color: white; }
+        .twitter { color: white; }
+        .instagram { color: white; }
+        
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.15;
+        }
+        
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 8s infinite ease-in-out;
+            filter: blur(1px);
+        }
+        
+        .shape-1 {
+            width: 120px;
+            height: 120px;
+            background-color: var(--cambridge-blue);
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            width: 180px;
+            height: 180px;
+            background-color: var(--dark-slate-gray);
+            top: 65%;
+            left: 85%;
+            animation-delay: 2s;
+        }
+        
+        .shape-3 {
+            width: 80px;
+            height: 80px;
+            background-color: var(--hookers-green);
+            top: 75%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .interest-pill {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background-color: var(--ash-gray);
+            color: var(--charcoal);
+        }
+
+        .interest-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(47,62,70,0.1);
+        }
+
+        .cybersecurity { 
+            background-color: var(--dark-slate-gray);
+            color: white;
+        }
+        .video-editing { 
+            background-color: var(--cambridge-blue);
+            color: var(--charcoal);
+        }
+        .gaming { 
+            background-color: var(--hookers-green);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <header>
+        <h1>Sambhav Singh</h1>
+        <p class="tagline">Cybersecurity Enthusiast & Creative Technologist</p>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a tech enthusiast with a deep passion for cybersecurity, dedicated to understanding and improving digital defense mechanisms. When I'm not exploring the latest in infosec, you can find me editing videos with creative effects or immersed in competitive gaming.</p>
+            <p>My journey combines technical security knowledge with creative digital expression, always looking for ways to merge these worlds in innovative projects.</p>
+            
+            <div class="interests">
+                <div class="interest-pill cybersecurity">Cybersecurity</div>
+                <div class="interest-pill video-editing">Video Editing</div>
+                <div class="interest-pill gaming">Gaming</div>
+                <div class="interest-pill">Ethical Hacking</div>
+                <div class="interest-pill">Digital Forensics</div>
+                <div class="interest-pill">Content Creation</div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project">
+                <h3>Network Security Analyzer</h3>
+                <p>A Python-based tool that monitors network traffic and identifies potential security vulnerabilities in real-time.</p>
+                <a href="#">Live Demo →</a> | <a href="#">GitHub</a>
+            </div>
+            
+            <div class="project">
+                <h3>Gaming Montage Series</h3>
+                <p>Curated collection of my best gaming moments with professional editing and effects using Adobe Premiere Pro.</p>
+                <a href="#">View on YouTube →</a>
+            </div>
+            
+            <div class="project">
+                <h3>Password Strength Visualizer</h3>
+                <p>Interactive web app that demonstrates how different password combinations stand against brute force attacks.</p>
+                <a href="#">Live Demo →</a> | <a href="#">GitHub</a>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Want to discuss cybersecurity, collaborate on a creative project, or just talk about the latest games?</p>
+            <a href="mailto:work.sambhavsingh@gmail.com">work.sambhavsingh@gmail.com</a>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" class="social-icon">
+                <svg class="github" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" class="social-icon">
+                <svg class="linkedin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://twitter.com/yourusername" class="social-icon">
+                <svg class="twitter" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+            </a>
+            <a href="https://instagram.com/yourusername" class="social-icon">
+                <svg class="instagram" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+        </div>
+        <p>© <span id="year"></span> Sambhav Singh. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        // Update copyright year automatically
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Add intersection observer for scroll animations
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add interest pill animations
+        const interestPills = document.querySelectorAll('.interest-pill');
+        interestPills.forEach(pill => {
+            pill.addEventListener('mouseenter', () => {
+                pill.style.transform = 'translateY(-3px)';
+            });
+            pill.addEventListener('mouseleave', () => {
+                pill.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
